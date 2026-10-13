@@ -1,0 +1,25 @@
+<header class="cabecera">
+  <p class="cabecera__etiqueta">// bitácora del curso</p>
+  <h1 class="cabecera__titulo">Aprendizaje</h1>
+  <p class="cabecera__texto">
+    Lo que me llevo de Programación en Ambiente Web I: temas, herramientas y en qué lo apliqué.
+  </p>
+</header>
+
+<div class="tarjetas">
+  @for (tema of listaTemas; track tema.id) {
+    <article class="tarjeta">
+      <div class="tarjeta__cabeza">
+        <span class="tarjeta__num">{{ tema.id < 10 ? '0' + tema.id : tema.id }}</span>
+        <span class="tarjeta__cat">{{ tema.categoria }}</span>
+      </div>
+      <h2 class="tarjeta__nombre">{{ tema.nombre }}</h2>
+      <p class="tarjeta__desc">{{ tema.descripcion }}</p>
+      <ul class="tarjeta__tech">
+        @for (tech of tema.tecnologias; track tech) {
+          <li>{{ tech }}</li>
+        }
+      </ul>
+    </article>
+  }
+</div>
