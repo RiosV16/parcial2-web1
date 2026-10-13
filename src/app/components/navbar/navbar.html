@@ -1,0 +1,16 @@
+<header class="barra">
+  <div class="barra__interior">
+    <a class="marca" routerLink="/hoja-de-vida" aria-label="Inicio">
+      <span class="marca__sello">AR</span>
+      <span class="marca__texto">andrés<em>.ríos</em></span>
+    </a>
+
+    <nav class="menu" aria-label="Navegación principal">
+      @for (enlace of enlaces; track enlace.ruta) {
+        <a class="menu__enlace" [routerLink]="enlace.ruta" routerLinkActive="activo">
+          <span class="menu__num">{{ enlace.numero }}</span>{{ enlace.etiqueta }}
+        </a>
+      }
+    </nav>
+  </div>
+</header>
