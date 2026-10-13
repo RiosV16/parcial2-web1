@@ -1,0 +1,113 @@
+.perfil {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.75rem;
+  align-items: start;
+  padding: 2rem;
+  border: 1px solid var(--linea);
+  border-radius: 1.25rem;
+  background:
+    radial-gradient(120% 140% at 0% 0%, color-mix(in srgb, var(--acento) 14%, transparent), transparent 55%),
+    var(--superficie);
+}
+
+.perfil__sello {
+  display: grid;
+  place-items: center;
+  width: 6.5rem;
+  height: 6.5rem;
+  border-radius: 1.5rem;
+  background: var(--acento);
+  color: #1a1305;
+  font-family: var(--fuente-mono);
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  transform: rotate(-3deg);
+  box-shadow: 0.45rem 0.45rem 0 var(--acento-2);
+}
+
+.perfil__etiqueta {
+  margin: 0 0 0.4rem;
+  font-family: var(--fuente-mono);
+  font-size: 0.78rem;
+  color: var(--acento-2);
+}
+
+.perfil__nombre {
+  margin: 0;
+  font-size: clamp(1.9rem, 4.5vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.perfil__carrera {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.85rem;
+  margin: 0.7rem 0 0;
+  color: var(--texto-suave);
+  font-size: 1.05rem;
+}
+
+.perfil__codigo {
+  padding: 0.15rem 0.6rem;
+  border: 1px dashed var(--acento-2);
+  border-radius: 999px;
+  color: var(--acento-2);
+  font-family: var(--fuente-mono);
+  font-size: 0.78rem;
+}
+
+.perfil__texto {
+  max-width: 62ch;
+  margin: 1.1rem 0 0;
+  color: var(--texto);
+  line-height: 1.65;
+}
+
+.perfil__contacto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.4rem 0 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.6rem;
+    background: var(--superficie-alta);
+    font-size: 0.88rem;
+  }
+
+  a {
+    color: var(--texto);
+  }
+}
+
+.dato__tipo {
+  font-family: var(--fuente-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--texto-tenue);
+}
+
+@media (max-width: 640px) {
+  .perfil {
+    grid-template-columns: 1fr;
+    padding: 1.4rem;
+  }
+
+  .perfil__sello {
+    width: 5rem;
+    height: 5rem;
+    font-size: 1.8rem;
+    border-radius: 1.2rem;
+  }
+}

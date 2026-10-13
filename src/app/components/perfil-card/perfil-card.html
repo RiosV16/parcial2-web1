@@ -1,0 +1,32 @@
+@if (estudiante) {
+  <section class="perfil">
+    <div class="perfil__sello" aria-hidden="true">{{ iniciales }}</div>
+
+    <div class="perfil__cuerpo">
+      <p class="perfil__etiqueta">// hoja de vida</p>
+      <h1 class="perfil__nombre">{{ estudiante.nombre }}</h1>
+      <p class="perfil__carrera">
+        {{ estudiante.carrera }}
+        <span class="perfil__codigo">cód. {{ estudiante.codigo }}</span>
+      </p>
+
+      <p class="perfil__texto">{{ estudiante.perfil }}</p>
+
+      <ul class="perfil__contacto">
+        <li><span class="dato__tipo">Ubicación</span>{{ estudiante.contacto.ubicacion }}</li>
+        @if (estudiante.contacto.email) {
+          <li><span class="dato__tipo">Correo</span>{{ estudiante.contacto.email }}</li>
+        }
+        @if (estudiante.contacto.telefono) {
+          <li><span class="dato__tipo">Teléfono</span>{{ estudiante.contacto.telefono }}</li>
+        }
+        @if (estudiante.contacto.github) {
+          <li>
+            <span class="dato__tipo">GitHub</span>
+            <a [href]="estudiante.contacto.github" target="_blank" rel="noopener">{{ estudiante.contacto.github }}</a>
+          </li>
+        }
+      </ul>
+    </div>
+  </section>
+}

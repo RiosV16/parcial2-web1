@@ -1,0 +1,57 @@
+.caja {
+  padding: 1.5rem;
+  border: 1px solid var(--linea);
+  border-radius: 1.1rem;
+  background: var(--superficie);
+}
+
+.caja__titulo {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin: 0 0 1.2rem;
+  font-size: 1.1rem;
+
+  span {
+    font-family: var(--fuente-mono);
+    font-size: 0.75rem;
+    color: var(--acento);
+  }
+}
+
+.grupo + .grupo {
+  margin-top: 1.1rem;
+}
+
+.grupo__nombre {
+  margin: 0 0 0.55rem;
+  font-family: var(--fuente-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--texto-tenue);
+}
+
+.grupo__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ficha {
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--linea-fuerte);
+  border-radius: 0.5rem;
+  background: var(--superficie-alta);
+  font-size: 0.85rem;
+  transition: border-color 0.15s, color 0.15s;
+
+  &:hover {
+    border-color: var(--acento);
+    color: var(--acento);
+  }
+}

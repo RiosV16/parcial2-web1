@@ -1,0 +1,14 @@
+<section class="caja">
+  <h2 class="caja__titulo"><span>03</span> Conocimientos y habilidades</h2>
+
+  @for (grupo of habilidades; track grupo.grupo) {
+    <div class="grupo">
+      <h3 class="grupo__nombre">{{ grupo.grupo }}</h3>
+      <ul class="grupo__items">
+        @for (item of grupo.items; track item) {
+          <li class="ficha">{{ item }}</li>
+        }
+      </ul>
+    </div>
+  }
+</section>
