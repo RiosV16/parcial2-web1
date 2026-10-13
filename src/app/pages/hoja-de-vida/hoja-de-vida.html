@@ -1,0 +1,41 @@
+<app-perfil-card [estudiante]="datosEstudiante" />
+
+<div class="rejilla">
+  <div class="rejilla__principal">
+    <section class="bloque">
+      <h2 class="bloque__titulo"><span>01</span> Formación académica</h2>
+      <ul class="linea">
+        @for (edu of datosEstudiante.educacion; track edu.titulo) {
+          <li class="linea__item">
+            <div>
+              <h3 class="linea__titulo">{{ edu.titulo }}</h3>
+              <p class="linea__sub">{{ edu.institucion }}</p>
+            </div>
+            <span class="etiqueta-anio">{{ edu.anio }}</span>
+          </li>
+        }
+      </ul>
+    </section>
+
+    <section class="bloque">
+      <h2 class="bloque__titulo"><span>02</span> Proyectos destacados</h2>
+      <div class="proyectos">
+        @for (p of datosEstudiante.proyectos; track p.nombre) {
+          <article class="proyecto">
+            <h3 class="proyecto__nombre">{{ p.nombre }}</h3>
+            <p class="proyecto__desc">{{ p.descripcion }}</p>
+            <ul class="proyecto__tech">
+              @for (t of p.tecnologias; track t) {
+                <li>{{ t }}</li>
+              }
+            </ul>
+          </article>
+        }
+      </div>
+    </section>
+  </div>
+
+  <aside class="rejilla__lateral">
+    <app-habilidades-list [habilidades]="datosEstudiante.habilidades" />
+  </aside>
+</div>

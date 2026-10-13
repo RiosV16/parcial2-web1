@@ -1,0 +1,137 @@
+.rejilla {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  align-items: start;
+}
+
+.rejilla__lateral {
+  position: sticky;
+  top: 5.5rem;
+}
+
+.bloque {
+  padding: 1.5rem;
+  border: 1px solid var(--linea);
+  border-radius: 1.1rem;
+  background: var(--superficie);
+
+  & + & {
+    margin-top: 1.5rem;
+  }
+}
+
+.bloque__titulo {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin: 0 0 1.2rem;
+  font-size: 1.1rem;
+
+  span {
+    font-family: var(--fuente-mono);
+    font-size: 0.75rem;
+    color: var(--acento);
+  }
+}
+
+.linea {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.linea__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  border-left: 3px solid var(--acento-2);
+  border-radius: 0 0.7rem 0.7rem 0;
+  background: var(--superficie-alta);
+}
+
+.linea__titulo {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.linea__sub {
+  margin: 0.15rem 0 0;
+  color: var(--texto-suave);
+  font-size: 0.88rem;
+}
+
+.etiqueta-anio {
+  flex-shrink: 0;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--acento-2) 18%, transparent);
+  color: var(--acento-2);
+  font-family: var(--fuente-mono);
+  font-size: 0.75rem;
+}
+
+.proyectos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 0.9rem;
+}
+
+.proyecto {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.05rem;
+  border: 1px solid var(--linea);
+  border-radius: 0.8rem;
+  background: var(--superficie-alta);
+  transition: transform 0.15s, border-color 0.15s;
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: var(--acento);
+  }
+}
+
+.proyecto__nombre {
+  margin: 0 0 0.4rem;
+  font-size: 0.98rem;
+}
+
+.proyecto__desc {
+  flex: 1;
+  margin: 0 0 0.8rem;
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+.proyecto__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    padding: 0.12rem 0.5rem;
+    border-radius: 0.35rem;
+    background: color-mix(in srgb, var(--acento) 14%, transparent);
+    color: var(--acento);
+    font-family: var(--fuente-mono);
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 860px) {
+  .rejilla {
+    grid-template-columns: 1fr;
+  }
+
+  .rejilla__lateral {
+    position: static;
+  }
+}
