@@ -1,0 +1,26 @@
+<header class="cabecera">
+  <p class="cabecera__etiqueta">// tema libre</p>
+  <h1 class="cabecera__titulo">Crear contenido <em>desde el Valle</em></h1>
+  <p class="cabecera__texto">
+    Mi tema libre es el proyecto que más me mueve fuera de clase: convertirme en creador de contenido,
+    con una cámara 360°, buenas historias y un estilo propio.
+  </p>
+</header>
+
+<div class="tarjetas">
+  @for (item of catalogo; track item.id) {
+    <article class="tarjeta">
+      <div class="tarjeta__portada" aria-hidden="true">{{ item.icono }}</div>
+      <div class="tarjeta__cuerpo">
+        <span class="tarjeta__cat">{{ item.categoria }}</span>
+        <h2 class="tarjeta__titulo">{{ item.titulo }}</h2>
+        <p class="tarjeta__desc">{{ item.descripcion }}</p>
+        <ul class="tarjeta__tags">
+          @for (tag of item.etiquetas; track tag) {
+            <li>#{{ tag }}</li>
+          }
+        </ul>
+      </div>
+    </article>
+  }
+</div>
